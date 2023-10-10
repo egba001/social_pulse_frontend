@@ -4,7 +4,15 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'green': '#64C661',
+        'dark': '#111111'
+      },
+      fontFamily: {
+        'red': ['Red Hat Display', 'sans-serif']
+      }
+    },
   },
   plugins: [],
 }
