@@ -1,10 +1,12 @@
+import SectionsLayout from "../../../layout/SectionsLayout";
+
 const MediaPlatform = () => {
     return (
-        <section className="h-screen">
-            <div className="w-full container mx-auto px-10 md:px-6 flex justify-between">
-                <div></div>
+        <SectionsLayout>
+            <div className="flex justify-between w-full">
+            
             </div>
-        </section>
+        </SectionsLayout>
     )
 }
 
