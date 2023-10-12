@@ -32,7 +32,7 @@ const Navbar = () => {
                     backgroundPositionX: "90%",
                     backgroundPositionY: "105%"
                 }}
-                className={`h-screen pt-10 w-full fixed z-40 ease-in-out duration-300 bg-white z-10 top-0 right-0 ${isOpen ? "translate-x-0 " : "translate-x-full "} `}>
+                className={`h-screen pt-10 w-full fixed z-40 ease-in-out duration-300 bg-white top-0 right-0 ${isOpen ? "translate-x-0 " : "translate-x-full "} `}>
                 <AiOutlineClose size={25} className='mt-2 mr-2 right-2 absolute cursor-pointer' onClick={closeNavMenu} />
                 <img src={logo} alt="Social Pulse logo" className='cursor-pointer ml-2' />
                 <nav className='mt-28 mx-auto w-fit mb-10'>
