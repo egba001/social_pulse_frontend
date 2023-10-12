@@ -6,7 +6,7 @@ import Btn from "../../../components/commons/Btn";
 const Protect = () => {
   return (
     <section className="protect-section">
-      <div className="container mx-auto px-6 lg:px-24 py-16 lg:py-40">
+      <div className="container mx-auto px-6 lg:px-24 py-36 lg:py-40">
         <div className="row">
           <div className="image_col w-full md:w-2/5">
             <img

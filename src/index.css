@@ -16,7 +16,7 @@
 }
 
 .heading_2 {
-  @apply font-red font-bold text-2xl md:text-4xl ;
+  @apply font-red font-bold text-2xl md:text-4xl;
 }
 
 .paragraph {
@@ -29,6 +29,13 @@
   background-size: 25%;
   background-position-x: 100%, 0%;
   background-position-y: 0%, 100%;
+}
+
+@media (max-width: 700px) {
+    .protect-section {
+        background-size: 100%;
+        background-position-y: -5%, 110%;
+    }
 }
 
 .design-section {
