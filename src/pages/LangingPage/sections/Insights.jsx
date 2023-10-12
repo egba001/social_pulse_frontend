@@ -5,7 +5,7 @@ import insights from './../../../assets/insights.png';
 const Insights = () => {
     return (
         <SectionsLayout>
-            <div className="flex flex-col lg:flex-row justify-between items-center w-full">
+            <div className="flex flex-col lg:flex-row py-0 lg:py-24 justify-between items-center w-full">
                 <img src={insights} alt="chart" className='drop-shadow lg:w-[35%] mb-8 lg:mb-0' />
                 <article className='lg:w-[55%] w-full'>
                     <h2 className='text-2xl lg:text-3xl font-bold mb-4 text-[#111]'><span className='text-green'>Seamlessly</span> gather insights about your brand </h2>

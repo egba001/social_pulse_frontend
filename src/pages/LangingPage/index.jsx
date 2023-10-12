@@ -11,7 +11,7 @@ import MediaPlatform from "./sections/MediaPlatform";
 
 const LandingPage = () => {
     return (
-        <>
+        <div className="relative">
             <LandingPageLayout className="text-green-400 text-2xl">
                 <Navbar />
             </LandingPageLayout>
@@ -19,7 +19,7 @@ const LandingPage = () => {
             <Insights />
             <BrandRep />
             <MediaPlatform />
-        </>
+        </div>
     )
 }
 
