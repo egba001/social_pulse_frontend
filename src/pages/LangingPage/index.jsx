@@ -6,6 +6,7 @@ import Navbar from "../../components/Navbar";
 import LandingPageLayout from "../../layout/LandingPageLayout";
 import CTA from "./sections/CTA";
 import Design from "./sections/Design";
+import Footer from "./sections/Footer";
 import Header from "./sections/Header";
 import MediaPlatform from "./sections/MediaPlatform";
 import Protect from "./sections/Protect";
@@ -21,6 +22,7 @@ const LandingPage = () => {
       <Protect />
       <Design />
       <CTA />
+      <Footer />
     </>
   );
 };
