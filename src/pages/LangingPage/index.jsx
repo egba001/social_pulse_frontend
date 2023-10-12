@@ -20,6 +20,7 @@ const LandingPage = () => {
         <Navbar />
       </LandingPageLayout>
       <Header />
+      <Insights />
       <MediaPlatform />
       <Protect />
       <Design />
