@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter'
 const Header = () => {
     return (
         <header
-            className="h-[80vh] w-full font-red"
+            className="h-[80vh] w-full font-red border-b border-b-purple-300"
             style={{
                 backgroundImage: "url('/circleRight.png'), url('/circleBottom.png')",
                 backgroundRepeat: "no-repeat",
