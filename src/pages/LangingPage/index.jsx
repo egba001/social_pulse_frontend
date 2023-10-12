@@ -7,7 +7,9 @@ import LandingPageLayout from "../../layout/LandingPageLayout";
 import CTA from "./sections/CTA";
 import Design from "./sections/Design";
 import Footer from "./sections/Footer";
+import BrandRep from "./sections/BrandRep";
 import Header from "./sections/Header";
+import Insights from "./sections/Insights";
 import MediaPlatform from "./sections/MediaPlatform";
 import Protect from "./sections/Protect";
 
