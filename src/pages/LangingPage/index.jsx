@@ -23,10 +23,8 @@ const LandingPage = () => {
   }, [])
 
   return (
-    <>
-      <LandingPageLayout className="text-green-400 text-2xl">
-        <Navbar />
-      </LandingPageLayout>
+    <main className="max-w-screen font-red overflow-x-hidden">
+      <Navbar />
       <Header />
       <MediaPlatform />
       <Insights />
@@ -34,7 +32,7 @@ const LandingPage = () => {
       <Design />
       <CTA />
       <Footer />
-    </>
+    </main>
   );
 };
 
