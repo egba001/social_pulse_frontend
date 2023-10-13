@@ -1,4 +1,4 @@
-import logo from "../../../assets/socialPulse.png";
+import logo from "../../../assets/Logo.svg";
 import { FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 
@@ -76,14 +76,14 @@ const Footer = () => {
               <FaFacebookF className="cursor-pointer" />
             </div>
           </div>
-          {constants.map((i) => (
-            <div className="col">
+          {constants.map((i, index) => (
+            <div className="col" key={index}>
               <h5 className="font-red font-semibold text-sm text-gray-700 uppercase mb-3">
                 {i.heading}
               </h5>
               <ul>
-                {i.links.map((link) => (
-                  <li className="mb-2">
+                {i.links.map((link, id) => (
+                  <li className="mb-2" key={id}>
                     <a
                       href={link.link}
                       className="font-red text-sm font-normal"

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import logo from './../assets/socialPulse.png';
+import logo from './../assets/Logo.svg';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BiMenu } from 'react-icons/bi';
 
@@ -19,7 +19,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="w-full flex justify-between items-center py-10">
+        <div className="w-full flex justify-between items-center py-10 px-6 lg:px-12">
             <img src={logo} alt="Social Pulse logo" className='cursor-pointer' />
             <div className='cursor-pointer lg:hidden rounded-full'>
                 <BiMenu size={25} onClick={openNavMenu} />
@@ -32,11 +32,11 @@ const Navbar = () => {
                     backgroundPositionX: "90%",
                     backgroundPositionY: "105%"
                 }}
-                className={`h-screen pt-10 w-full fixed z-40 ease-in-out duration-300 bg-white top-0 right-0 ${isOpen ? "translate-x-0 " : "translate-x-full "} `}>
+                className={`h-screen fixed pt-10 w-full z-40 ease-in-out duration-300 bg-white top-0 right-0 ${isOpen ? "translate-x-0 " : "translate-x-full "} `}>
                 <AiOutlineClose size={25} className='mt-2 mr-2 right-2 absolute cursor-pointer' onClick={closeNavMenu} />
                 <img src={logo} alt="Social Pulse logo" className='cursor-pointer ml-2' />
                 <nav className='mt-28 mx-auto w-fit mb-10'>
-                    <ul className='flex flex-col items-center space-y-4 mix-blend-multiply font-extrabold text-2xl'>
+                    <ul className='flex flex-col items-center space-y-4 font-bold text-2xl'>
                         <li className='text-[#111] active:text-green'>About</li>
                         <li className='text-[#111] active:text-green'>Features</li>
                         <li className='text-[#111] active:text-green'>Resources</li>
