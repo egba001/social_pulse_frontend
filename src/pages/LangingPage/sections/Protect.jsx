@@ -1,6 +1,4 @@
-import image from "../../../assets/protect-img.png";
-import top from "../../../assets/top.png";
-import bottom from "../../../assets/bottom.png";
+import image from "../../../assets/rep.png";
 import Btn from "../../../components/commons/Btn";
 
 const Protect = () => {
@@ -8,14 +6,14 @@ const Protect = () => {
     <section className="protect-section">
       <div className="container mx-auto px-6 lg:px-24 py-36 lg:py-40">
         <div className="row">
-          <div className="image_col w-full md:w-2/5">
+          <div className="image_col w-full md:w-2/5" data-aos="fade-right" data-aos-duration="1500">
             <img
               src={image}
               alt="map showing the worlds wireless connectivity"
               className="image"
             />
           </div>
-          <div className="text_col w-full md:w-3/5">
+          <div className="text_col w-full md:w-3/5" data-aos="fade-left" data-aos-duration="1500">
             <h2 className="heading_2 text-dark">
               <span className="text-green">Protect</span> your brand reputation
               on social media
