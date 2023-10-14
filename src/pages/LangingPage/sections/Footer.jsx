@@ -86,7 +86,7 @@ const Footer = () => {
                   <li className="mb-2" key={id}>
                     <a
                       href={link.link}
-                      className="font-red text-sm font-normal"
+                      className="font-red text-sm font-normal hover:text-green"
                     >
                       {link.title}
                     </a>
