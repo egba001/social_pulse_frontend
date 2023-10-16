@@ -7,8 +7,8 @@ const Register = () => {
   const [viewPassword, setViewPassword] = useState(false);
 
   return (
-    <section className="login-container grid grid-col-1 md:grid-cols-4 gap-10 md:gap-0 min-h-screen">
-      <aside className="col-span-4 md:col-span-1 flex items-center justify-center bg-green h-80 md:h-full">
+    <section className="login-container grid grid-col-1 md:grid-cols-4 gap-10 md:gap-0 min-h-screen overflow-y-scroll">
+      <aside className="hidden md:col-span-1 md:flex items-center justify-center bg-green h-80 md:h-full">
         <Link to="/" className="logo">
           <img
             src={socialPulse}
@@ -19,7 +19,7 @@ const Register = () => {
       </aside>
       <aside className="main-content col-span-4 md:col-span-3 flex items-center justify-center">
         <div className="max-w-xl">
-          <h2 className="text-center text-dark text-4xl font-semibold mb-5">
+          <h2 className="text-center text-dark text-3xl md:text-4xl font-semibold mb-5">
             Create an Account
           </h2>
           <form className="form m-5">
