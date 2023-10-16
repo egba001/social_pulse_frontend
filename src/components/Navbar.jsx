@@ -44,10 +44,10 @@ const Navbar = () => {
                         <li className='text-[#111] active:text-green'>Demo</li>
                     </ul>
                 </nav>
-                <button className='px-6 block text-white w-[15rem] bg-green mx-auto text-center mb-4 py-2 rounded-lg'>
+                <Link to='/register' className='px-6 block text-white w-[15rem] bg-green mx-auto text-center mb-4 py-2 rounded-lg'>
                     Sign up
-                </button>
-                <button className='outline-none block mx-auto text-green w-[15rem] rounded-xl active:bg-green active:text-white active:border-0 py-2 cursor-pointer border  border-green'>Login</button>
+                </Link>
+                <Link to='/login' className='outline-none block mx-auto text-green w-[15rem] rounded-xl active:bg-green active:text-white active:border-0 py-2 cursor-pointer border  border-green'>Login</Link>
             </div>
             <nav className='hidden lg:block'>
                 <ul className='flex items-center space-x-6'>
