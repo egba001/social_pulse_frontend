@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from './../assets/socialPulse.png';
 
 const Navbar = () => {
@@ -13,10 +14,10 @@ const Navbar = () => {
                 </ul>
             </nav>
             <div className='hidden lg:flex items-center space-x-8'>
-                <div className='px-6 text-white cursor-pointer hover:transform hover:-translate-y-1 transition-transform duration-300 ease-in-out bg-green py-2 rounded-lg'>
+                <Link to="/register" className='px-6 text-white cursor-pointer hover:transform hover:-translate-y-1 transition-transform duration-300 ease-in-out bg-green py-2 rounded-lg'>
                     Sign up
-                </div>
-                <button className='outline-none text-green cursor-pointer'>Login</button>
+                </Link>
+                <Link to='/login' className='outline-none text-green cursor-pointer'>Login</Link>
             </div>
         </div>
     )
