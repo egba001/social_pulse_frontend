@@ -3,7 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 const Header = () => {
   return (
     <header
-      className="h-[80vh] w-full font-red"
+      className="h-[80vh] w-full font-red border-b border-b-purple-300"
       style={{
         backgroundImage: "url('/circleRight.png'), url('/circleBottom.png')",
         backgroundRepeat: "no-repeat",
@@ -12,7 +12,7 @@ const Header = () => {
         backgroundPositionY: "-80%, 100%",
       }}
     >
-      <div className="container mx-auto px-6 lg:px-24 pt-16 lg:pt-24">
+      <div className="container mx-auto px-6 lg:px-24 pt-16 lg:pt-24" data-aos="zoom-in" data-aos-duration="1500">
         <h1 className="text-3xl lg:text-5xl font-bold lg:font-extrabold text-dark mb-6">
           <Typewriter
             words={[

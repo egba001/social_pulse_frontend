@@ -5,7 +5,7 @@ const Design = () => {
     <section className="design-section">
       <div className="container mx-auto px-6 lg:px-24 py-16 lg:py-40">
         <div className="row">
-          <div className="text_col w-full md:w-1/2">
+          <div className="text_col w-full md:w-1/2" data-aos="fade-right" data-aos-duration="1500">
             <h2 className="heading_2 text-dark">
               SocialPulse is designed just for{" "}
               <span className="text-green">You</span>
@@ -17,7 +17,7 @@ const Design = () => {
               individual and business needs and objectives.
             </p>
           </div>
-          <div className="image_col w-full md:w-1/2">
+          <div className="image_col w-full md:w-1/2" data-aos="zoom-in" data-aos-duration="1500">
             <img
               src={image}
               alt="map showing human connectivity"
