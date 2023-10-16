@@ -1,7 +1,7 @@
 const CTA = () => {
   return (
     <section className="bg-purple text-center">
-      <div className="container mx-auto px-6 lg:px-24 py-16 lg:py-40">
+      <div className="container mx-auto px-6 lg:px-24 py-16 lg:py-40" data-aos="flip-up" data-aos-duration="2000">
         <div className="flex flex-col gap-10 items-center">
           <h2 className="heading_2 text-white">
             Ready to maximize your brand on social media?
