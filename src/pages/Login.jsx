@@ -20,7 +20,7 @@ const Login = () => {
       </aside>
       <aside className="main-content col-span-4 md:col-span-3 flex items-center justify-center">
         <div className="max-w-xl">
-          <h2 className="text-center text-dark text-4xl font-semibold mb-5">
+          <h2 className="text-center text-dark text-3xl md:text-4xl font-semibold mb-5">
             Login to your Account
           </h2>
           <form className="form m-5">
