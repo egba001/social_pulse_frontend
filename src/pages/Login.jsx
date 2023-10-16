@@ -10,7 +10,7 @@ const Login = () => {
   return (
     <section className="login-container grid grid-col-1 md:grid-cols-4 gap-10 md:gap-0 min-h-screen overflow-y-scroll">
       <aside className="hidden md:col-span-1 md:flex items-center justify-center bg-green  h-80 md:h-full">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo ">
           <img
             src={socialPulse}
             alt="socialPulse Logo"
