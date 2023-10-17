@@ -3,8 +3,8 @@ All sections should be imported to this index component and added as children to
 */
 
 import Navbar from "../../components/Navbar";
-import LandingPageLayout from "../../layout/LandingPageLayout";
 import CTA from "./sections/CTA";
+import CarouselSection from "./sections/Carousel";
 import Design from "./sections/Design";
 import Footer from "./sections/Footer";
 import Header from "./sections/Header";
@@ -30,6 +30,7 @@ const LandingPage = () => {
       <Insights />
       <Protect />
       <Design />
+      <CarouselSection />
       <CTA />
       <Footer />
     </main>
