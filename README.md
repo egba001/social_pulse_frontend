@@ -1,8 +1,19 @@
-# React + Vite
+# Social Pulse Frontend- Sentiment Analysis Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- ![Vite](https://img.shields.io/badge/Vite-2.0.4-brightgreen)
+- ![React](https://img.shields.io/badge/React-17.0.2-blue)
+- ![react-carousel](https://img.shields.io/badge/react--carousel-3.1.7-orange)
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-2.2.15-blueviolet)
 
-Currently, two official plugins are available:
+Social Pulse is designed to help develop advance sentiment analysis and social media monitoring system for gadgets brands using cutting edge natural language processing and machine learning techniques. With Social Pulse, you can make better financial projections from the results and analysis the App will present to you, including helping you to evaluate the attitudes of your audience and be the watchdog for your brand, looking out to make it a better, bigger and more efficient.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Perform sentiment analysis on text input.
+- Visually appealing user interface with carousel components.
+- Utilizes Tailwind CSS for a modern and responsive design.
+
+## Contributors
+
+- [William Anaza](https://github.com/williamwebs)
+- [Egba Nnaemeka](https://github.com/egba001)
