@@ -1,12 +1,74 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import socialPulse from "../assets/Logo.png";
 import google from "../assets/google.png";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useState } from "react";
 
+// firebase
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithRedirect,
+} from "firebase/auth";
+import { auth } from "../firebase";
+
 const Login = () => {
   const [checked, setChecked] = useState(false);
   const [viewPassword, setViewPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // route
+  const navigate = useNavigate();
+
+  // function to reset all the input fields
+  const resetFields = () => {
+    setEmail("");
+    setPassword("");
+    setChecked(false);
+  };
+
+  // proviider
+  const provider = new GoogleAuthProvider();
+
+  // sign in with google
+  const signInWithGoogle = async () => {
+    // try {
+    //   const res = await signInWithRedirect(auth, provider);
+    //   console.log(res.user);
+    //   console.log("google sign in successful!");
+    //   navigate("/");
+    // } catch (error) {
+    //   console.log(error.message);
+    // }
+    await signInWithRedirect(auth, provider)
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+        console.log("google sign in successful!");
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  // handle Sigin function
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await signInWithEmailAndPassword(auth, email, password);
+      console.log("sign in successful!");
+      resetFields();
+
+      // navigate to dashboard
+      navigate("/");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <section className="login-container grid grid-col-1 md:grid-cols-4 gap-10 md:gap-0 min-h-screen overflow-y-scroll">
       <aside className="hidden md:col-span-1 md:flex items-center justify-center bg-green  h-80 md:h-full">
@@ -23,15 +85,23 @@ const Login = () => {
           <h2 className="text-center text-dark text-3xl md:text-4xl font-semibold mb-5">
             Login to your Account
           </h2>
-          <form className="form m-5">
+          <form className="form m-5" onSubmit={handleSignIn}>
             <label className="label">Email Address</label>
-            <input type="email" className="input-field" placeholder="" />
+            <input
+              type="email"
+              className="input-field"
+              placeholder=""
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <label className="label">Password</label>
             <div className="password relative h-[40px] rounded">
               <input
                 type={viewPassword ? "text" : "password"}
                 className="input-field h-full"
                 placeholder=""
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               {viewPassword ? (
                 <AiFillEyeInvisible
@@ -75,8 +145,12 @@ const Login = () => {
           <p className="font-red font-medium text-center text-dark text-sm">
             OR
           </p>
+          {/* google sign-in button */}
           <div className="m-5">
-            <button className="block w-full text-center border border-gray-400 rounded p-2">
+            <button
+              className="block w-full text-center border border-gray-400 rounded p-2"
+              onClick={signInWithGoogle}
+            >
               <div className="flex items-center justify-center gap-1 mx-auto">
                 <span className="font-red font-normal text-sm text-dark">
                   Login with Google
