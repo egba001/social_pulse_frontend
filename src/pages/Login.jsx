@@ -8,7 +8,6 @@ import { useState } from "react";
 import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
-  signInWithRedirect,
   signOut,
   signInWithPopup,
 } from "firebase/auth";
