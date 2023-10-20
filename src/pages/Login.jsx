@@ -12,7 +12,8 @@ import {
   signOut,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
+import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 
 const Login = () => {
   const [checked, setChecked] = useState(false);
@@ -37,6 +38,22 @@ const Login = () => {
   const signInWithGoogle = async () => {
     try {
       const res = await signInWithPopup(auth, provider);
+
+      const user = res.user;
+
+      // check if the user exists in the database
+      const userDocRef = await getDoc(doc(db, "users", user.uid));
+      // if no user, create a user object in the database
+      if (!userDocRef.exists()) {
+        await setDoc(doc(db, "users", user.uid), {
+          uid: user.uid,
+          businessName: user.displayName,
+          fullname: user.displayName,
+          email: user.email,
+          createdAt: serverTimestamp(),
+        });
+      }
+
       console.log(res.user);
       console.log("google sign in successful!");
       navigate("/");
