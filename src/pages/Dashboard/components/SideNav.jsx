@@ -5,6 +5,8 @@ import { PiChatsCircle } from "react-icons/pi";
 import { TbWorldSearch } from "react-icons/tb";
 import { BiLogOut } from "react-icons/bi";
 import { HiOutlineDocument, HiOutlineDocumentText } from "react-icons/hi";
+import { signOut } from "@firebase/auth";
+import { auth } from "../../../firebase";
 
 const SideNav = () => {
   return (
@@ -54,7 +56,10 @@ const SideNav = () => {
           </ul>
         </div>
         {/* footer */}
-        <button className="absolute bottom-14 text-base">
+        <button
+          className="absolute bottom-14 text-base"
+          onClick={() => signOut(auth)}
+        >
           <div className="flex items-center gap-1">
             <BiLogOut className="text-red-400" />
             Logout

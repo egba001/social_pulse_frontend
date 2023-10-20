@@ -93,7 +93,7 @@ const Login = () => {
           <h2 className="text-center text-dark text-3xl md:text-4xl font-semibold mb-5">
             Login to your Account
           </h2>
-          <button onClick={() => signOut(auth)}>sign out</button>
+
           <form className="form m-5" onSubmit={handleSignIn}>
             <label className="label">Email Address</label>
             <input
