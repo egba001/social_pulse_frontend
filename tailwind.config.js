@@ -7,6 +7,7 @@ export default {
         green: "#64C661",
         dark: "#111111",
         purple: "rgba(111, 45, 189, 1)",
+        bg_grey: "#eee",
       },
       fontFamily: {
         red: ["Red Hat Display", "sans-serif"],
