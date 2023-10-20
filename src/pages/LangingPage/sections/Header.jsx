@@ -1,4 +1,5 @@
 import { Typewriter } from "react-simple-typewriter";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -42,12 +43,12 @@ const Header = () => {
             />
           </div>
           <div className="w-[60%] lg:w-[35%] mx-auto">
-            <button
+            <Link to="/register"
               type="submit"
               className="bg-green rounded-md text-white w-full py-2 text-center"
             >
               Get Started
-            </button>
+            </Link>
           </div>
         </form>
       </div>

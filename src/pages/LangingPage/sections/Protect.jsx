@@ -1,4 +1,5 @@
 import image from "../../../assets/rep.png";
+import Button from "../../../components/common/Button";
 import Btn from "../../../components/commons/Btn";
 
 const Protect = () => {
@@ -25,7 +26,7 @@ const Protect = () => {
               before it becomes complex.
             </p>
             <div className="w-1/3 ">
-              <Btn text="Get Started" link="/" />
+              <Button />
             </div>
           </div>
         </div>
