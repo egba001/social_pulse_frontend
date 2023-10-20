@@ -1,9 +1,10 @@
 import LandingPage from "./pages/LangingPage";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Login from "./pages/Login/Login";
+import Register from "./pages/SignUp/Register";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import GetStarted from "./pages/Onboarding/GetStarted";
 
 function App() {
   const currentUser = useContext(AuthContext);
@@ -23,10 +24,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route
-          index
-          element={<ProtectedRoute></ProtectedRoute>}
-        /> */}
+        <Route path="/onboard" element={<GetStarted />} />
       </Routes>
     </BrowserRouter>
   );
