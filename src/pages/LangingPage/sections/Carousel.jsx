@@ -27,7 +27,7 @@ const responsive = {
 const CarouselSection = () => {
     return (
         <div className="py-36 lg:px-36 px-6">
-            <h2 className="text-[3rem] font-bold mb-6 text-center">Meet the <span className="text-green">team</span></h2>
+            <h2 className="heading_2 text-dark text-center mb-4">Meet the <span className="text-green">team</span></h2>
         <Carousel
             responsive={responsive}
             autoPlaySpeed={2300}

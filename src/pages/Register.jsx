@@ -65,7 +65,7 @@ const Register = () => {
       resetFields();
 
       // navigate to dashboard
-      navigate("/");
+      navigate("/dashboard");
 
       console.log("user created!");
     } catch (error) {

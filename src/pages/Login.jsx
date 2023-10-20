@@ -55,7 +55,7 @@ const Login = () => {
 
       console.log(res.user);
       console.log("google sign in successful!");
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error.message);
     }
@@ -71,7 +71,7 @@ const Login = () => {
       resetFields();
 
       // navigate to dashboard
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error.message);
     }
