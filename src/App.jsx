@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import DashboardRoute from "./pages/Dashboard/pages/DashboardRoute";
+import GetStarted from "./pages/Onboarding/GetStarted";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -32,6 +33,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/onboard" element={<ProtectedRoute><GetStarted /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );
