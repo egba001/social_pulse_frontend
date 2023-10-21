@@ -8,6 +8,7 @@ import tr from './../../assets/tr.svg';
 import Overlay from './Overlay';
 import { FormContext } from '../../context/FormContext';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const GetStarted = () => {
 
@@ -51,7 +52,7 @@ const GetStarted = () => {
                     <img src={image} alt="Illustration" />
                 </div>
             </div>
-            <button className="bg-green rounded-md text-white w-full py-2 text-center lg:w-[30%] mx-auto">Continue</button>
+            <Link to="/dashboard" className="bg-green rounded-md text-white w-full py-2 text-center lg:w-[30%] mx-auto">Continue</Link>
         </div>
     )
 }

@@ -5,13 +5,39 @@ import { HiOutlineEmojiSad } from 'react-icons/hi';
 import { BiComment, BiHappy, BiLike } from 'react-icons/bi';
 import { PiDotsThreeOutlineDuotone } from 'react-icons/pi'
 import Filters from "../../../components/Filters";
-import CarouselSection from '../../LangingPage/sections/Carousel';
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../context/AuthContext";
+import { doc, getDoc } from "@firebase/firestore";
+import { db } from "../../../firebase";
+
 
 const Home = () => {
+
+  const currentUser = useContext(AuthContext);
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const userDocRef = await getDoc(doc(db, "users", currentUser.uid));
+
+        if (userDocRef.exists()) {
+          setUserData(userDocRef.data());
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
+    if (currentUser) {
+      fetchUserData();
+    }
+  }, [currentUser]);
+
   return (
-    <div className="flex w-full font-red bg-[#F9F9F9] px-8 pt-4">
-      <div className="w-[60%]">
-        <h1 className="text-[22px] font-medium mb-4 text-[#111111]">Welcome, Merry Gadgets</h1>
+    <div className="flex w-full font-red bg-inherit">
+      <div className="w-[100%]">
+        <h1 className="text-[22px] font-medium mb-4 text-[#111111]">Welcome, {userData?.businessName}</h1>
         <div className="flex justify-between items-center">
           <p className="text-dark font-medium mb-4 text-xl">Sentiments</p>
           <div className="flex space-x-3 items-center">
@@ -37,7 +63,7 @@ const Home = () => {
           {
             comments.map(comment => {
               return (
-                <div key={comment.id} className="rounded-md shadow-md h-[10rem] border mb-8 p-4">
+                <div key={comment.id} className="rounded-md shadow-md bg-white h-[10rem] border mb-8 p-4">
                   <div className="flex justify-between items-center">
                     <div className="flex space-x-2">
                       <img src={comment.icon} alt={comment.socialMediaPlatform} />
@@ -68,9 +94,9 @@ const Home = () => {
           }
         </div>
       </div>
-      <aside className="ml-3 bg-white w-full">
+      <aside className="ml-3 bg-white w-[40%]">
           <Filters />
-          <div className="w-full ml-4">
+          <div className="w-[90%] ml-4">
             <h2 className="text-[20px] font-medium text-dark mb-6 ">Date</h2>
             <div className="rounded-xl mb-6 flex items-center justify-center space-x-2 py-2 border border-[#CFCFCF] text-[#606060]">
               <MdOutlineCalendarMonth />
@@ -128,10 +154,9 @@ const Home = () => {
               </label>
             </div>
           </div>
-          
       </aside>
     </div>
   )
 }
 
-export default Home
+export default Home;

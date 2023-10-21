@@ -101,7 +101,7 @@ const data = {
 
 export const LineChart = () => {
   return (
-    <div className="w-full">
+    <div className="w-full h-[20rem] bg-white">
       <Line options={options} data={data} />
     </div>
   );
