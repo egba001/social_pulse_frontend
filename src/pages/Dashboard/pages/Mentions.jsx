@@ -1,5 +1,4 @@
 import facebook from "../../../assets/facebook.svg";
-import lineChart from "../../../assets/LineChart.png";
 import { FiThumbsUp } from "react-icons/fi";
 import { GoComment } from "react-icons/go";
 import {
@@ -9,8 +8,36 @@ import {
   PiSmileySad,
   PiSmileyMeh,
 } from "react-icons/pi";
+import LineChart from "../../../components/LineChart";
+import { SentimentData } from "../../../utils/Data";
+import { useState } from "react";
+
+import { DateRange, DateRangePicker, DefinedRange } from "react-date-range";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { addDays } from "date-fns";
 
 const Mentions = () => {
+  const [data, setData] = useState({
+    labels: SentimentData.map((data) => data.month),
+    datasets: [
+      {
+        label: "Mentions",
+        data: SentimentData.map((data) => data.userGain),
+      },
+    ],
+  });
+
+  const [state, setState] = useState([
+    {
+      startDate: new Date(),
+      endDate: null,
+      key: "selection",
+    },
+  ]);
+
+  console.log(state);
+
   return (
     <section id="mention">
       <div className="grid grid-cols-5 gap-4 h-full">
@@ -242,7 +269,7 @@ const Mentions = () => {
         <div className="right-panel col-span-2 h-full bg-white p-2 px-4 rounded-lg">
           <h3 className="font-red font-medium text-xl">Mention Statistics</h3>
           {/* line chart */}
-          {/* <div className="line-chart bg-white rounded-md shadow-md p-4 my-4">
+          <div className="line-chart bg-white rounded-md shadow-md p-4 my-4">
             <div className="header flex items-center justify-between mb-6">
               <p className="font-red font-semibold text-base text-dark">
                 Social Media Mentions
@@ -250,10 +277,20 @@ const Mentions = () => {
               <PiInfoFill className="text-gray-400 text-2xl cursor-pointer" />
             </div>
             <hr className="border border-gray-200" />
-          </div> */}
-          <img src={lineChart} alt="line chart" className="my-4" />
+            <LineChart chartData={data} />
+          </div>
+          {/* <img src={lineChart} alt="line chart" className="my-4" /> */}
           <h3 className="font-red font-medium text-xl">Filters</h3>
           <h2 className="font-red font-medium text-base">Date</h2>
+          <div className="">
+            <DateRange
+              editableDateInputs={true}
+              onChange={(item) => setState([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={state}
+            />
+            ;
+          </div>
           <h2 className="font-red font-medium text-base">Sentiments</h2>
           <h2 className="font-red font-medium text-base">Relevant</h2>
         </div>
