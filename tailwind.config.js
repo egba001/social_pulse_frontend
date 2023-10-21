@@ -8,6 +8,12 @@ export default {
         dark: "#111111",
         purple: "rgba(111, 45, 189, 1)",
         bg_grey: "#eee",
+        bg_positive: "#D7EDFF",
+        text_positive: "#35A7FF",
+        bg_neutral: "#FFF7C3",
+        text_neutral: "#D4C03F",
+        bg_negative: "#FFDEE0",
+        text_negative: "#D44A53",
       },
       fontFamily: {
         red: ["Red Hat Display", "sans-serif"],
