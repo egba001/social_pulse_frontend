@@ -1,4 +1,3 @@
-import william from "../../../assets/william.jpg";
 import { BiSearch } from "react-icons/bi";
 import { HiOutlineBell } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";

@@ -71,7 +71,7 @@ const Login = () => {
       resetFields();
 
       // navigate to dashboard
-      navigate("/dashboard");
+      navigate("/onboard");
     } catch (error) {
       console.log(error.message);
     }

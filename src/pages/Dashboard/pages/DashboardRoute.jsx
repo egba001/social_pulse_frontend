@@ -8,7 +8,7 @@ const DashboardRoute = () => {
   return (
     <Dashboard>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="mentions" element={<Mentions />} />
         <Route path="sources" element={<Sources />} />
       </Routes>

@@ -74,13 +74,13 @@ const Mentions = () => {
                 <div className="user-details">
                   <div className="flex items-start justify-between max-w-[70%] w-full">
                     <div className="profile flex items-start gap-2">
-                      <div className="profile-image w-[24px] h-[24px] flex items-center justify-center rounded-[50%]">
+                      {/* <div className="profile-image w-[24px] h-[24px] flex items-center justify-center rounded-[50%]">
                         <img
                           src={facebook}
                           alt="user profile image"
                           className="w-full object-contain"
                         />
-                      </div>
+                      </div> */}
                       <div className="profile-name">
                         <h5 className="font-red text-base font-medium text-dark">
                           Shasha Lincon
@@ -143,13 +143,13 @@ const Mentions = () => {
                 <div className="user-details">
                   <div className="flex items-start justify-between max-w-[70%] w-full">
                     <div className="profile flex items-start gap-2">
-                      <div className="profile-image w-[24px] h-[24px] flex items-center justify-center rounded-[50%]">
+                      {/* <div className="profile-image w-[24px] h-[24px] flex items-center justify-center rounded-[50%]">
                         <img
                           src={facebook}
                           alt="user profile image"
                           className="w-full object-contain"
                         />
-                      </div>
+                      </div> */}
                       <div className="profile-name">
                         <h5 className="font-red text-base font-medium text-dark">
                           Shasha Lincon
@@ -212,13 +212,13 @@ const Mentions = () => {
                 <div className="user-details">
                   <div className="flex items-start justify-between max-w-[70%] w-full">
                     <div className="profile flex items-start gap-2">
-                      <div className="profile-image w-[24px] h-[24px] flex items-center justify-center rounded-[50%]">
+                      {/* <div className="profile-image w-[24px] h-[24px] flex items-center justify-center rounded-[50%]">
                         <img
                           src={facebook}
                           alt="user profile image"
                           className="w-full object-contain"
                         />
-                      </div>
+                      </div> */}
                       <div className="profile-name">
                         <h5 className="font-red text-base font-medium text-dark">
                           Shasha Lincon
