@@ -63,7 +63,7 @@
 
 /* sidebar */
 .sidebar-link-normal {
-  @apply flex items-center gap-1 w-full p-1 px-2 pr-2 rounded-tr-lg rounded-br-lg font-medium border-l-[10px] border-l-purple bg-green text-white duration-500 my-1 cursor-pointer;
+  @apply flex items-center gap-1 w-full p-1 px-2 pr-2 rounded-tr-lg rounded-br-lg font-medium border-l-[5px] border-l-purple bg-green text-white duration-500 my-1 cursor-pointer;
 }
 
 .dashboard_body {
