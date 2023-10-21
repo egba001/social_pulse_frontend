@@ -16,6 +16,9 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { addDays } from "date-fns";
+import { MdOutlineSentimentNeutral } from "react-icons/md";
+import { BiHappy } from "react-icons/bi";
+import { HiOutlineEmojiSad } from "react-icons/hi";
 
 const Mentions = () => {
   const [data, setData] = useState({
@@ -291,7 +294,34 @@ const Mentions = () => {
             />
             ;
           </div>
-          <h2 className="font-red font-medium text-base">Sentiments</h2>
+          {/* sentiments */}
+          <div className="sentiments">
+            <h2 className="font-red font-medium text-base">Sentiments</h2>
+            <div className="flex gap-3 my-2 mb-7">
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input type="checkbox" />
+                <div className="bg-bg_neutral font-red text-sm p-[0.1rem] px-2 rounded-3xl border border-text_neutral flex items-center gap-1">
+                  Neutral
+                  <MdOutlineSentimentNeutral className="text-dark text-base" />
+                </div>
+              </label>
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input type="checkbox" />
+                <div className="bg-bg_positive font-red text-sm p-[0.1rem] px-2 rounded-3xl border border-text_positive flex items-center gap-1">
+                  Positive
+                  <BiHappy className="text-dark text-base" />
+                </div>
+              </label>
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input type="checkbox" />
+                <div className="bg-bg_negative font-red text-sm p-[0.1rem] px-2 rounded-3xl border border-text_negative flex items-center gap-1">
+                  Negative
+                  <HiOutlineEmojiSad className="text-dark text-base" />
+                </div>
+              </label>
+            </div>
+          </div>
+
           <h2 className="font-red font-medium text-base">Relevant</h2>
         </div>
       </div>
