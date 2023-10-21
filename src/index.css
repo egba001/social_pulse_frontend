@@ -67,5 +67,5 @@
 }
 
 .dashboard_body {
-  @apply min-h-screen relative w-full pt-[1rem] pr-[5rem] pb-[0rem] pl-[17rem];
+  @apply min-h-screen relative w-full pt-[7rem] pr-[5rem] pb-[0rem] pl-[17rem];
 }

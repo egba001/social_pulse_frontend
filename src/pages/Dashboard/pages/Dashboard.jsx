@@ -5,7 +5,7 @@ const Dashboard = ({ children }) => {
   return (
     <main id="dashboard">
       <SideNav />
-      <section className="dashboard_body">
+      <section className="dashboard_body bg-bg_grey">
         <DashboardNavbar />
         {children}
       </section>
