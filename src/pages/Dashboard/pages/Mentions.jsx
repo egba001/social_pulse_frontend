@@ -12,7 +12,7 @@ import LineChart from "../../../components/LineChart";
 import { SentimentData } from "../../../utils/Data";
 import { useState } from "react";
 
-import { DateRange, DateRangePicker, DefinedRange } from "react-date-range";
+import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { addDays } from "date-fns";
