@@ -4,11 +4,8 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/SignUp/Register";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
-<<<<<<< HEAD
 import DashboardRoute from "./pages/Dashboard/pages/DashboardRoute";
-=======
 import GetStarted from "./pages/Onboarding/GetStarted";
->>>>>>> main
 
 function App() {
   const currentUser = useContext(AuthContext);

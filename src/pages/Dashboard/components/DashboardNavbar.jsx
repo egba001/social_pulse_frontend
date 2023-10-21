@@ -34,8 +34,8 @@ const DashboardNavbar = () => {
   console.log(userData);
 
   return (
-    <nav className="flex items-center justify-between mb-14">
-      <div className=" border border-[#CFCFCF] py-2 px-3 rounded-md max-w-md w-full flex items-center gap-2">
+    <nav className="flex items-center justify-between mb-10 pt-7">
+      <div className=" border border-[#CFCFCF] py-2 px-3 ml-10 rounded-md max-w-md w-full flex items-center gap-2">
         <BiSearch className="text-2xl text-[#CFCFCF]" />
         <input
           type="text"

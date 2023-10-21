@@ -1,5 +1,7 @@
 import PropTypes from "prop-types"
 import CreatableSelect from 'react-select/creatable';
+import { FormContext } from "../context/FormContext";
+import { useContext } from 'react';
 
 const colourOptions = [
   { label: "smartphones", value: "smartphones" },
@@ -7,7 +9,9 @@ const colourOptions = [
   { label: "gadgets", value: "gadgets" },
 ]
 
-const Selector = ({ setFormData, formData }) => {
+const Selector = () => {
+
+  const { setFormData, formData } = useContext(FormContext)
 
   let terms = [];
 
@@ -18,6 +22,7 @@ const Selector = ({ setFormData, formData }) => {
     }
     setFormData({ ...formData, keywords: terms })
     // console.log(`Option selected:`, selectedOption);
+    console.log(formData)
   };
 
   return (
@@ -27,7 +32,8 @@ const Selector = ({ setFormData, formData }) => {
 )};
 
 Selector.propTypes = {
-  setFormData: PropTypes.func,
+  formData: PropTypes.any,
+  setFormData: PropTypes.func
 }
 
 export default Selector;
