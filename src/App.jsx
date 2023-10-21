@@ -1,10 +1,10 @@
 import LandingPage from "./pages/LangingPage";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login/Login";
-import Register from "./pages/SignUp/Register";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import DashboardRoute from "./pages/Dashboard/pages/DashboardRoute";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   const currentUser = useContext(AuthContext);
@@ -32,7 +32,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/onboard" element={<ProtectedRoute><GetStarted /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );

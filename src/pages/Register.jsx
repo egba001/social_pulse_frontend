@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import socialPulse from "../../assets/Logo.png";
+import socialPulse from "../assets/Logo.png";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
 // firebase
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, db, storage } from "../../firebase";
+import { auth, db, storage } from "../firebase";
 import { ref } from "firebase/storage";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 
@@ -65,7 +65,7 @@ const Register = () => {
       resetFields();
 
       // navigate to dashboard
-      navigate("/onboard");
+      navigate("/dashboard");
 
       console.log("user created!");
     } catch (error) {
