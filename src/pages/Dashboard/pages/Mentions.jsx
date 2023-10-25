@@ -43,8 +43,8 @@ const Mentions = () => {
 
   return (
     <section id="mention">
-      <div className="grid grid-cols-5 gap-4 h-full">
-        <div className="left-panel col-span-3 h-full">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 h-full px-2 md:px-0">
+        <div className="left-panel grid-cols-1 md:col-span-3 h-full">
           {/* tab */}
           <div className="flex items-center justify-between">
             <h3 className="font-red font-medium text-xl">Mentions</h3>
@@ -269,7 +269,7 @@ const Mentions = () => {
             </div>
           </article>
         </div>
-        <div className="right-panel col-span-2 h-full bg-white p-2 px-4 rounded-lg">
+        <div className="right-panel grid-cols-1 md:col-span-2 h-full bg-white p-2 px-4 rounded-lg">
           <h3 className="font-red font-medium text-xl">Mention Statistics</h3>
           {/* line chart */}
           <div className="line-chart bg-white rounded-md shadow-md p-4 my-4">
