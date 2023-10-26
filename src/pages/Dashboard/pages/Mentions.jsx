@@ -25,7 +25,7 @@ const Mentions = () => {
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 h-full px-2 md:px-0">
         <div className="left-panel grid-cols-1 md:col-span-3 h-full">
           {/* tab */}
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0">
             <h3 className="font-red font-medium text-xl">Mentions</h3>
             <Tab toggle={toggle} updateToggle={updateToggle} />
           </div>

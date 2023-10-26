@@ -3,7 +3,7 @@ import { useState } from "react";
 const Tab = ({ toggle, updateToggle }) => {
   return (
     <div>
-      <div className="tab flex items-center justify-between w-[350px] h-[40px] rounded-lg bg-gray-300">
+      <div className="tab flex items-center justify-between max-w-[350px] w-full h-[40px] rounded-lg bg-gray-300">
         <button
           onClick={() => updateToggle(1)}
           className={

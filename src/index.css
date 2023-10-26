@@ -73,6 +73,22 @@
 .dashboard-sidenav-icon {
   @apply text-3xl lg:text-base;
 }
+/* mobile nav */
+.dashboard-sidenav-icon-mobile {
+  @apply text-xl;
+}
+
+.dashboard-sidenav-text-mobile {
+  @apply text-xl font-red font-medium;
+}
+
+.mobile-active-link {
+  @apply flex items-center gap-2 w-full p-1 px-10 bg-white;
+}
+
+.mobile-normal-link {
+  @apply flex items-center gap-2 w-full p-1 px-10
+}
 /* .dashboard_body {
   @apply min-h-screen relative w-full pt-[7rem] sm:pr-[1rem] md:pr-[5rem] pb-[0rem] pl-[1rem] sm:pl-[17rem] sss;
 } */
