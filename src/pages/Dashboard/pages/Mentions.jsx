@@ -3,32 +3,17 @@ import { FiThumbsUp } from "react-icons/fi";
 import { GoComment } from "react-icons/go";
 import {
   PiDotsThreeOutlineDuotone,
-  PiInfoFill,
   PiSmiley,
   PiSmileySad,
   PiSmileyMeh,
 } from "react-icons/pi";
-import LineChart from "../../../components/LineChart";
-import { SentimentData } from "../../../utils/Data";
+
 import { useState } from "react";
 
-import { MdOutlineSentimentNeutral } from "react-icons/md";
-import { BiHappy } from "react-icons/bi";
-import { HiOutlineEmojiSad } from "react-icons/hi";
-import Calender from "../components/Calender";
 import Tab from "../components/Tab";
+import RightPanel from "../components/RightPanel";
 
 const Mentions = () => {
-  const [data, setData] = useState({
-    labels: SentimentData.map((data) => data.month),
-    datasets: [
-      {
-        label: "Mentions",
-        data: SentimentData.map((data) => data.userGain),
-      },
-    ],
-  });
-
   // Tab
   const [toggle, setToggle] = useState(3);
   const updateToggle = (id) => {
@@ -496,54 +481,7 @@ const Mentions = () => {
             </article>
           </article>
         </div>
-        <div className="right-panel grid-cols-1 md:col-span-2 h-full bg-white p-2 px-4 rounded-lg">
-          <h3 className="font-red font-medium text-xl">Mention Statistics</h3>
-          {/* line chart */}
-          <div className="line-chart bg-white rounded-md shadow-md p-4 my-4">
-            <div className="header flex items-center justify-between mb-6">
-              <p className="font-red font-semibold text-base text-dark">
-                Social Media Mentions
-              </p>
-              <PiInfoFill className="text-gray-400 text-2xl cursor-pointer" />
-            </div>
-            <hr className="border border-gray-200" />
-            <LineChart chartData={data} />
-          </div>
-          {/* <img src={lineChart} alt="line chart" className="my-4" /> */}
-          <h3 className="font-red font-medium text-xl">Filters</h3>
-          <h2 className="font-red font-medium text-base">Date</h2>
-          {/* calender */}
-          <Calender />
-          {/* sentiments */}
-          <div className="sentiments">
-            <h2 className="font-red font-medium text-base">Sentiments</h2>
-            <div className="flex gap-3 my-2 mb-7">
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" />
-                <div className="bg-bg_neutral font-red text-sm p-[0.1rem] px-2 rounded-3xl border border-text_neutral flex items-center gap-1">
-                  Neutral
-                  <MdOutlineSentimentNeutral className="text-dark text-base" />
-                </div>
-              </label>
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" />
-                <div className="bg-bg_positive font-red text-sm p-[0.1rem] px-2 rounded-3xl border border-text_positive flex items-center gap-1">
-                  Positive
-                  <BiHappy className="text-dark text-base" />
-                </div>
-              </label>
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" />
-                <div className="bg-bg_negative font-red text-sm p-[0.1rem] px-2 rounded-3xl border border-text_negative flex items-center gap-1">
-                  Negative
-                  <HiOutlineEmojiSad className="text-dark text-base" />
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <h2 className="font-red font-medium text-base">Relevant</h2>
-        </div>
+        <RightPanel />
       </div>
     </section>
   );
