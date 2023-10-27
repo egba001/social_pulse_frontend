@@ -63,9 +63,32 @@
 
 /* sidebar */
 .sidebar-link-normal {
-  @apply flex items-center gap-1 w-full p-1 px-2 pr-2 rounded-tr-lg rounded-br-lg font-medium border-l-[10px] border-l-purple bg-green text-white duration-500 my-1 cursor-pointer;
+  @apply flex items-center gap-1 w-full p-1 px-2 pr-2 rounded-tr-lg rounded-br-lg font-normal border-l-[5px] border-l-purple bg-green text-white active:duration-500 my-1 cursor-pointer;
 }
 
 .dashboard_body {
-  @apply min-h-screen relative w-full pt-[7rem] pr-[5rem] pb-[0rem] pl-[17rem];
+  @apply min-h-screen relative w-full pl-2 sm:pl-[5rem] lg:pl-[17rem] pr-1 sm:pr-[1rem] md:pr-[1rem] xl:pr-[5rem] pb-2 sm:pb-[1rem] pt-[5rem] sm:pt-[6rem] lg:pt-[7rem];
 }
+
+.dashboard-sidenav-icon {
+  @apply text-3xl lg:text-base;
+}
+/* mobile nav */
+.dashboard-sidenav-icon-mobile {
+  @apply text-xl;
+}
+
+.dashboard-sidenav-text-mobile {
+  @apply text-xl font-red font-medium;
+}
+
+.mobile-active-link {
+  @apply flex items-center gap-2 w-full p-1 px-10 bg-white;
+}
+
+.mobile-normal-link {
+  @apply flex items-center gap-2 w-full p-1 px-10
+}
+/* .dashboard_body {
+  @apply min-h-screen relative w-full pt-[7rem] sm:pr-[1rem] md:pr-[5rem] pb-[0rem] pl-[1rem] sm:pl-[17rem] sss;
+} */

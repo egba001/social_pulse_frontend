@@ -18,6 +18,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [disable, setDisable] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // route
   const navigate = useNavigate();
@@ -47,6 +48,7 @@ const Register = () => {
     const storageRef = ref(storage, displayName);
 
     try {
+      setLoading(true);
       const res = await createUserWithEmailAndPassword(auth, email, password);
       console.log(res);
       console.log(res.user);
@@ -66,10 +68,12 @@ const Register = () => {
 
       // navigate to dashboard
       navigate("/dashboard");
-
       console.log("user created!");
+
+      setLoading(false);
     } catch (error) {
       console.log(error.message);
+      setLoading(false);
     }
   };
 
@@ -170,7 +174,7 @@ const Register = () => {
               }
               disabled={disable}
             >
-              Sign Up
+              {loading ? "Creating Account..." : "Sign Up"}
             </button>
             <p className="block text-center bg-[#E0F4DF] font-red font-bold text-sm py-2">
               Already have an account.{" "}

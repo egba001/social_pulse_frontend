@@ -1,18 +1,17 @@
 import { LineChart } from "../../../components/Chart";
-import { comments } from "../../../data/posts";
-import { MdOutlineCalendarMonth, MdOutlineSentimentNeutral } from 'react-icons/md';
-import { HiOutlineEmojiSad } from 'react-icons/hi';
-import { BiComment, BiHappy, BiLike } from 'react-icons/bi';
-import { PiDotsThreeOutlineDuotone } from 'react-icons/pi'
-import Filters from "../../../components/Filters";
+import { PiDotsThreeOutlineDuotone, PiSmileyMeh } from "react-icons/pi";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { doc, getDoc } from "@firebase/firestore";
 import { db } from "../../../firebase";
 
+import RightPanel from "../components/RightPanel";
+import { GoComment } from "react-icons/go";
+import { FiThumbsUp } from "react-icons/fi";
+import facebook from "../../../assets/facebook.svg";
+
 
 const Home = () => {
-
   const currentUser = useContext(AuthContext);
   const [userData, setUserData] = useState(null);
 
@@ -35,9 +34,11 @@ const Home = () => {
   }, [currentUser]);
 
   return (
-    <div className="flex w-full font-red bg-inherit">
-      <div className="w-[100%]">
-        <h1 className="text-[22px] font-medium mb-4 text-[#111111]">Welcome, {userData?.businessName}</h1>
+    <div className="grid grid-cols-1 md:grid-cols-5 gap-4 h-full px-2 md:px-0">
+      <div className="left-panel grid-cols-1 md:col-span-3 h-full">
+        <h1 className="text-[22px] font-medium mb-4 text-[#111111]">
+          Welcome, {userData?.businessName}
+        </h1>
         <div className="flex justify-between items-center">
           <p className="text-dark font-medium mb-4 text-xl">Sentiments</p>
           <div className="flex space-x-3 items-center">
@@ -55,108 +56,139 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="shadow-lg">
-            <LineChart />
+        <div className="shadow-lg rounded-lg overflow-hidden">
+          <LineChart />
         </div>
-        <div className="w-full">
-          <h2 className="text-dark text-[22px] mb-7 font-medium mt-6">Mentions</h2>
-          {
-            comments.map(comment => {
-              return (
-                <div key={comment.id} className="rounded-md shadow-md bg-white h-[10rem] border mb-8 p-4">
-                  <div className="flex justify-between items-center">
-                    <div className="flex space-x-2">
-                      <img src={comment.icon} alt={comment.socialMediaPlatform} />
+        <div className="w-full mt-5">
+          <div className="flex items-center justify-between">
+            <h3 className="font-red font-medium text-xl">Mentions</h3>
+          </div>
+          {/* cards display starts here */}
+          <aside className="card bg-white rounded-2xl shadow-sm p-4 px-6 my-2">
+            <div className="flex items-start gap-4 justify-between">
+              {/* social media logo */}
+              <div className="brand-logo flex-none w-[30px] h-[30px] flex items-center justify-center rounded-[50%]">
+                <img
+                  src={facebook}
+                  alt="social media logo"
+                  className="w-full object-contain"
+                />
+              </div>
+              {/* social content */}
+              <div className="comment-details flex-grow w-full flex flex-col gap-4">
+                <div className="user-details">
+                  <div className="flex items-start justify-between max-w-[70%] w-full">
+                    <div className="profile flex items-start gap-2">
+                      {/* <div className="profile-image w-[24px] h-[24px] flex items-center justify-center rounded-[50%]">
+                        <img
+                          src={facebook}
+                          alt="user profile image"
+                          className="w-full object-contain"
+                        />
+                      </div> */}
+                      <div className="profile-name">
+                        <h5 className="font-red text-base font-medium text-dark">
+                          Shasha Lincon
+                        </h5>
+                        <p className="date font-red font-normal text-sm text-dark">
+                          19 Oct 2022
+                        </p>
+                      </div>
+                    </div>
+                    <div className="sentiment tag flex items-center gap-1 bg-bg_neutral border border-text_neutral p-[0.1rem] px-4 rounded-3xl">
+                      <span className="text-text_neutral font-red font-normal text-sm">
+                        Neutral
+                      </span>
+                      <PiSmileyMeh className="text-dark text-base" />
+                    </div>
+                  </div>
+                </div>
+                <div className="user-comment">
+                  <p className="font-red font-medium text-base text-dark">
+                    Samsumg phones are one of the best brands of gadgets out
+                    there #gadgets #phones
+                  </p>
+                </div>
+                <div className="comment-reactions">
+                  <div className="flex items-center gap-8">
+                    <div className="like flex items-center gap-1 cursor-pointer">
+                      <FiThumbsUp className="text-base text-dark" />
+                      <span className="font-red font-medium text-base text-dark">
+                        21
+                      </span>
+                    </div>
+                    <div className="like flex items-center gap-1 cursor-pointer">
+                      <GoComment className="text-base text-dark" />
+                      <span className="font-red font-medium text-base text-dark">
+                        23
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* ellipse */}
+              <div className="ellipse flex-none p-0 m-0 cursor-pointer">
+                <PiDotsThreeOutlineDuotone className="text-2xl text-dark" />
+              </div>
+            </div>
+          </aside>
+          {/* {comments.map((comment) => {
+            return (
+              <div
+                key={comment.id}
+                className="rounded-md shadow-md bg-white h-[10rem] border mb-8 p-4"
+              >
+                <div className="flex justify-between items-center">
+                  <div className="flex space-x-2">
+                    <img src={comment.icon} alt={comment.socialMediaPlatform} />
                     <div>
-                      <span className="font-medium text-[14px]">{comment.commenterName}</span>
+                      <span className="font-medium text-[14px]">
+                        {comment.commenterName}
+                      </span>
                       <p className="text-[12px]">{comment.dateOfPost}</p>
                     </div>
-                    </div>
-                    <div className={comment.sentiment === "positive" ? "bg-[#D7EDFF] px-2 py-1 rounded-3xl border border-[#35A7FF] text-[#1B5480] flex items-center" : comment.sentiment === "neutral" ? "bg-[#FFF7C3] px-2 py-1 rounded-3xl border border-[#D4C03F] text-[#807426] flex items-center" : "bg-[#FFDEE0] px-2 py-1 rounded-3xl border border-[#802D32]/[.5] text-[#802D32] flex items-center"}>{comment.sentiment}
-                    <div>{ comment.sentiment === "positive" ? <BiHappy /> : comment.sentiment === "negative" ? <HiOutlineEmojiSad /> : <MdOutlineSentimentNeutral /> }</div>
-                    </div>
-                    <PiDotsThreeOutlineDuotone />
                   </div>
-                  <p className="mt-3 ml-6">{comment.comment}</p>
-                  <div className="flex items-center mt-3 space-x-3 ml-6">
-                    <div className="flex items-center space-x-1">
-                      <BiLike />
-                      <span>{comment.noOfLikes}</span>
+                  <div
+                    className={
+                      comment.sentiment === "positive"
+                        ? "bg-[#D7EDFF] px-2 py-1 rounded-3xl border border-[#35A7FF] text-[#1B5480] flex items-center"
+                        : comment.sentiment === "neutral"
+                        ? "bg-[#FFF7C3] px-2 py-1 rounded-3xl border border-[#D4C03F] text-[#807426] flex items-center"
+                        : "bg-[#FFDEE0] px-2 py-1 rounded-3xl border border-[#802D32]/[.5] text-[#802D32] flex items-center"
+                    }
+                  >
+                    {comment.sentiment}
+                    <div>
+                      {comment.sentiment === "positive" ? (
+                        <BiHappy />
+                      ) : comment.sentiment === "negative" ? (
+                        <HiOutlineEmojiSad />
+                      ) : (
+                        <MdOutlineSentimentNeutral />
+                      )}
                     </div>
-                    <div className="flex items-center space-x-1">
-                      <BiComment />
-                      <span>{comment.noOfComments}</span>
-                    </div>
+                  </div>
+                  <PiDotsThreeOutlineDuotone />
+                </div>
+                <p className="mt-3 ml-6">{comment.comment}</p>
+                <div className="flex items-center mt-3 space-x-3 ml-6">
+                  <div className="flex items-center space-x-1">
+                    <BiLike />
+                    <span>{comment.noOfLikes}</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <BiComment />
+                    <span>{comment.noOfComments}</span>
                   </div>
                 </div>
-              )
-            })
-          }
+              </div>
+            );
+          })} */}
         </div>
       </div>
-      <aside className="ml-3 bg-white w-[40%]">
-          <Filters />
-          <div className="w-[90%] ml-4">
-            <h2 className="text-[20px] font-medium text-dark mb-6 ">Date</h2>
-            <div className="rounded-xl mb-6 flex items-center justify-center space-x-2 py-2 border border-[#CFCFCF] text-[#606060]">
-              <MdOutlineCalendarMonth />
-              <span>Previous months</span>
-            </div>
-            <h2 className="text-[20px] font-medium text-dark mb-6 ">Sentiments</h2>
-            <div className="flex space-x-3 mb-7">
-              <label className="flex items-center space-x-2">
-                <input type="checkbox" />
-                <div className="bg-[#FFF7C3] px-2 py-1 rounded-3xl border border-[#D4C03F] text-[#807426] flex items-center">
-                Neutral
-                <MdOutlineSentimentNeutral />
-              </div>
-              </label>
-              <label className="flex items-center space-x-2">
-                <input type="checkbox" />
-                <div className="bg-[#D7EDFF] px-2 py-1 rounded-3xl border border-[#35A7FF] text-[#1B5480] flex items-center">
-                Positive
-                <BiHappy />
-                </div>
-              </label>
-              <label className="flex items-center space-x-2">
-                <input type="checkbox" />
-                <div className="bg-[#FFDEE0] px-2 py-1 rounded-3xl border border-[#802D32]/[.5] text-[#802D32] flex items-center">
-                Negative
-                <HiOutlineEmojiSad />
-              </div>
-              </label>
-            </div>
-            <h2 className="text-[20px] font-medium text-dark mb-6 ">Relevance</h2>
-            <div>
-              <label className="flex items-center mb-2 space-x-2">
-                <input type="checkbox" />
-                <div className="">
-                All mentions
-              </div>
-              </label>
-              <label className="flex items-center mb-2 space-x-2">
-                <input type="checkbox" />
-                <div className="">
-                Most Recent
-              </div>
-              </label>
-              <label className="flex items-center mb-2 space-x-2">
-                <input type="checkbox" />
-                <div className="">
-                Most Popular
-              </div>
-              </label>
-              <label className="flex items-center mb-2 space-x-2">
-                <input type="checkbox" />
-                <div className="">
-                Important mentions
-              </div>
-              </label>
-            </div>
-          </div>
-      </aside>
+      <RightPanel />
     </div>
-  )
-}
+  );
+};
 
 export default Home;

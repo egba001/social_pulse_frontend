@@ -19,6 +19,7 @@ const Login = () => {
   const [viewPassword, setViewPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // route
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ const Login = () => {
   // sign in with google
   const signInWithGoogle = async () => {
     try {
+      setLoading(true);
       const res = await signInWithPopup(auth, provider);
 
       const user = res.user;
@@ -56,7 +58,9 @@ const Login = () => {
       console.log(res.user);
       console.log("google sign in successful!");
       navigate("/dashboard");
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.log(error.message);
     }
   };
@@ -66,14 +70,17 @@ const Login = () => {
     e.preventDefault();
 
     try {
+      setLoading(true)
       const res = await signInWithEmailAndPassword(auth, email, password);
       console.log("sign in successful!");
       resetFields();
 
       // navigate to dashboard
       navigate("/onboard");
+      setLoading(false)
     } catch (error) {
       console.log(error.message);
+      setLoading(false)
     }
   };
 
@@ -147,7 +154,7 @@ const Login = () => {
             </div>
 
             <button className="block w-full bg-green text-white text-base font-medium outline-none border-none py-2 my-4 rounded hover:bg-green">
-              Login
+              {loading ? "Authenticating..." : "Login"}
             </button>
           </form>
 
