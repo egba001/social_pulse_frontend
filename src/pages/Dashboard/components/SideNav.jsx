@@ -5,7 +5,7 @@ import { RxDashboard } from "react-icons/rx";
 import { PiChatsCircle } from "react-icons/pi";
 import { TbWorldSearch } from "react-icons/tb";
 import { BiLogOut } from "react-icons/bi";
-import { HiOutlineDocument, HiOutlineDocumentText } from "react-icons/hi";
+import { HiOutlineDocument, HiOutlineDocumentText, HiOutlineMail } from "react-icons/hi";
 import { signOut } from "@firebase/auth";
 import { auth } from "../../../firebase";
 import { useLocation } from "react-router-dom";
@@ -73,14 +73,28 @@ const SideNav = () => {
         <div className="export">
           <h4 className="hidden lg:block">EXPORT REPORT</h4>
           <ul>
-            <li className="font-red text-base cursor-pointer flex items-center gap-1 w-full p-1 px-2 pr-4">
+            <NavLink
+              to="/dashboard/pdf"
+              className={({ isActive }) =>
+                isActive
+                  ? "sidebar-link-normal"
+                  : "flex items-center gap-1 w-full p-1 px-2 pr-4"
+              }
+            >
               <HiOutlineDocumentText className="dashboard-sidenav-icon" />
               <p className="hidden lg:block"> As Pdf</p>
-            </li>
-            <li className="font-red text-base cursor-pointer flex items-center gap-1 w-full p-1 px-2 pr-4">
-              <HiOutlineDocument className="dashboard-sidenav-icon" />
-              <p className="hidden lg:block">As Excel</p>
-            </li>
+            </NavLink>
+            <NavLink
+              to="/dashboard/email"
+              className={({ isActive }) =>
+                isActive
+                  ? "sidebar-link-normal"
+                  : "flex items-center gap-1 w-full p-1 px-2 pr-4"
+              }
+            >
+              <HiOutlineMail className="dashboard-sidenav-icon" />
+              <p className="hidden lg:block">As Email</p>
+            </NavLink>
           </ul>
         </div>
         {/* footer */}

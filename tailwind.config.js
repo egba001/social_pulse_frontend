@@ -14,6 +14,7 @@ export default {
         text_neutral: "#D4C03F",
         bg_negative: "#FFDEE0",
         text_negative: "#D44A53",
+        text_color: "#393939",
       },
       fontFamily: {
         red: ["Red Hat Display", "sans-serif"],
