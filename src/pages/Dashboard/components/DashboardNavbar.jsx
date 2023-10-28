@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import { doc, getDoc } from "@firebase/firestore";
 import { auth, db } from "../../../firebase";
 import { RxDashboard } from "react-icons/rx";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { PiChatsCircle } from "react-icons/pi";
 import { TbWorldSearch } from "react-icons/tb";
 import { signOut } from "firebase/auth";
@@ -63,7 +63,7 @@ const DashboardNavbar = () => {
       <div className="right">
         <div className="flex items-center gap-3">
           <HiOutlineBell className="text-2xl text-dark cursor-pointer" />
-          <div className="profile flex items-center gap-2">
+          <Link to="profile" className="profile flex items-center gap-2">
             <div className="profile-picture w-[35px] h-[35px] rounded-[50%] overflow-hidden">
               {/* <img
                     src={william}
@@ -80,7 +80,7 @@ const DashboardNavbar = () => {
                 {userData?.email}
               </p>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
 
