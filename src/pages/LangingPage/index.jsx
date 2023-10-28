@@ -14,6 +14,7 @@ import Protect from "./sections/Protect";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import Video from "./sections/Video";
 
 
 const LandingPage = () => {
@@ -30,6 +31,7 @@ const LandingPage = () => {
       <Insights />
       <Protect />
       <Design />
+      <Video />
       <CarouselSection />
       <CTA />
       <Footer />
