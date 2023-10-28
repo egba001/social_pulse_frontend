@@ -3,6 +3,7 @@ import EmailExport from "./EmailExport";
 import Home from "./Home";
 import Mentions from "./Mentions";
 import PDF from "./PDF";
+import Profile from "./Profile";
 import Sources from "./Sources";
 import { Route, Routes } from "react-router";
 
@@ -15,6 +16,7 @@ const DashboardRoute = () => {
         <Route path="sources" element={<Sources />} />
         <Route path="pdf" element={<PDF />} />
         <Route path="email" element={<EmailExport />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
     </Dashboard>
   );
